@@ -1,0 +1,24 @@
+$brand-primary: #e22d60;
+$brand-secondary: #2dbbe2;
+$dark-gray: #3a3c48;
+
+// $brand-font: "PT Sans";
+
+$tablet: 769px;
+$desktop: 960px;
+$widescreen: 1200px;
+
+// Fonts
+$font-stack: "Helvetica Neue", sans-serif;
+$base-font-size: 16px;
+
+// Spacing Scale
+$spacing-unit: 8px; // Base spacing unit
+
+// Spacing Variables
+$space-xs: $spacing-unit * 0.5; // 4px
+$space-sm: $spacing-unit; // 8px
+$space-md: $spacing-unit * 2; // 16px
+$space-lg: $spacing-unit * 3; // 24px
+$space-xl: $spacing-unit * 4; // 32px
+$space-xxl: $spacing-unit * 5; // 40px

@@ -1,11 +1,13 @@
-// @import "node_modules/modern-normalize/modern-normalize.css";
 @import "./settings";
+@import "./layout";
+@import "./components";
 
 body {
   font-family: $font-stack;
   font-size: $base-font-size;
   line-height: 1.6;
-  color: #333;
+  color: $muted-text;
+  background-color: white;
 }
 
 h1,
@@ -14,10 +16,53 @@ h3,
 h4,
 h5,
 h6 {
+  color: $brand-secondary;
   margin-bottom: $space-sm;
+  margin-top: 0;
 }
 
-.mytitle {
-  font-size: large;
-  color: rgb(121, 169, 44);
+p {
+  margin-bottom: $space-md;
+}
+
+a {
+  color: $muted-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $brand-secondary;
+  }
+}
+
+// Buttons
+button {
+  background-color: $brand-primary; // Primary background
+  color: $brand-secondary; // Secondary text color
+  padding: $space-sm $space-md;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($brand-primary, 10%);
+  }
+}
+
+// Box/Card Styling
+.box {
+  background-color: $muted-white;
+  padding: $space-md;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: $space-lg;
+}
+
+// Other Elements
+input,
+textarea {
+  padding: $space-sm;
+  border: 1px solid lighten($brand-secondary, 40%);
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: $space-md;
 }

@@ -1,8 +1,46 @@
+.sidebar {
+  border-right: 1px solid #726e6e;
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  text-align: left;
+  transition: width, left, right, 0.3s;
+  position: relative;
+  z-index: 1009;
+  padding: 1rem;
+}
+.sidebar .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  display: none;
+}
+
+.detail {
+  padding: 1rem;
+}
+
+.card {
+  border-radius: 16px;
+  background-color: #f8f8f8;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+.card .title {
+  text-align: start;
+}
+
 body {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: #666;
+  background-color: white;
 }
 
 h1,
@@ -11,12 +49,50 @@ h3,
 h4,
 h5,
 h6 {
+  color: #163300;
   margin-bottom: 8px;
+  margin-top: 0;
 }
 
-.mytitle {
-  font-size: large;
-  color: rgb(121, 169, 44);
+p {
+  margin-bottom: 16px;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #163300;
+}
+
+button {
+  background-color: #9fe870;
+  color: #163300;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(129.5060240964, 224.9337349398, 68.0662650602);
+}
+
+.box {
+  background-color: #f8f8f8;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #6eff00;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */

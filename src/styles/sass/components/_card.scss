@@ -1,0 +1,11 @@
+.card {
+  border-radius: 16px;
+  background-color: $muted-white;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    text-align: start;
+  }
+}

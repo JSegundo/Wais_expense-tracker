@@ -1,9 +1,12 @@
-$brand-primary: #e22d60;
-$brand-secondary: #2dbbe2;
-$dark-gray: #3a3c48;
+$brand-primary: #9fe870;
+$brand-secondary: #163300;
+$muted-white: #f8f8f8; // Light muted white for boxes/cards
+$text: #302e2e; // Muted color for normal text
+$muted-text: #666; // Muted color for normal text
 
 // $brand-font: "PT Sans";
 
+$phone: 480px;
 $tablet: 769px;
 $desktop: 960px;
 $widescreen: 1200px;
@@ -22,3 +25,6 @@ $space-md: $spacing-unit * 2; // 16px
 $space-lg: $spacing-unit * 3; // 24px
 $space-xl: $spacing-unit * 4; // 32px
 $space-xxl: $spacing-unit * 5; // 40px
+
+//
+$sidebar-width: 200px !default;

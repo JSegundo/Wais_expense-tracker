@@ -3,7 +3,6 @@ import Home from "./routes/Home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./routes/Root"
 import ErrorPage from "./routes/ErrorPage"
-// import App from "./App"
 import Settings from "./routes/Settings"
 import { ProtectedRoute } from "./components/ProtectedRoute"
 import Login from "./routes/Login"
@@ -14,7 +13,14 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
+      {
+        index: true,
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
       {
         path: "settings",
         element: (
@@ -27,11 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: (
-      <ProtectedRoute>
-        <Login />
-      </ProtectedRoute>
-    ),
+    element: <Login />,
   },
 ])
 

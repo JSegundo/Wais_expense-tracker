@@ -8,7 +8,10 @@ interface User {
 export interface AuthContextType {
   isAuthenticated: boolean
   user: User | null
-  login: (username: string, password: string) => void
+  login: (
+    username: FormDataEntryValue | null,
+    password: FormDataEntryValue | null
+  ) => Promise<{ success?: boolean; error?: { message: string } }>
   logout: () => void
 }
 
@@ -20,11 +23,21 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
   const [user, setUser] = useLocalStorage<User | null>("user", null)
 
-  const login = (username: string, password: string) => {
-    if (username === "test" && password === "password") {
-      setUser({ username })
-      setIsAuthenticated(true)
-    }
+  const login = (
+    username: FormDataEntryValue | null,
+    password: FormDataEntryValue | null
+  ): Promise<{ success?: boolean; error?: { message: string } }> => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (username === "test" && password === "password") {
+          setUser({ username })
+          setIsAuthenticated(true)
+          resolve({ success: true })
+        } else {
+          resolve({ error: { message: "Wrong credentials, try again" } })
+        }
+      }, 1000) // Simulate network delay
+    })
   }
 
   const logout = () => {

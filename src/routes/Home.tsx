@@ -1,13 +1,27 @@
-import React from "react"
-import Card from "../components/Card"
+import RegisterExpensesForm from "../components/RegisterExpenses"
+import ExpensesHistory from "../components/ExpensesHistory"
+import { useLocalStorage } from "usehooks-ts"
+import { Expense } from "../interfaces/IExpenses"
 
 const Home = () => {
+  const [expenses, setExpenses] = useLocalStorage<Expense[]>("expenses", [])
+
+  const addExpense = (expense: Expense) => {
+    const updatedExpenses = [...expenses, expense]
+    setExpenses(updatedExpenses)
+  }
+
   return (
     <>
-      <h2>Home</h2>
-      <Card />
-      <Card />
-      <Card />
+      {/* calculate balance from mapping expenses */}
+      <h6>Total balance</h6>
+      <h1>612,45 EUR</h1>
+
+      {/* Register expenses */}
+      <RegisterExpensesForm addExpense={addExpense} />
+
+      {/* transactions history */}
+      <ExpensesHistory expenses={expenses} />
     </>
   )
 }

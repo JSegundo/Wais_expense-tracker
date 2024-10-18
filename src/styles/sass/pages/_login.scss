@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  @include flex-col;
+  justify-content: start;
+  align-items: center;
+  padding: $space-xxl;
+
+  @include mq-xs {
+    padding: $space-xxl 0 0 0;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    max-width: $phone;
+    padding-top: $space-lg;
+
+    section {
+      margin-top: $space-lg;
+      align-self: flex-start;
+    }
+
+    @include mq-xs {
+      padding: 0.6rem;
+    }
+
+    article {
+      display: flex;
+      gap: $space-lg;
+      @include mq-xs {
+        @include flex-col;
+        gap: $space-xs;
+      }
+    }
+  }
+}

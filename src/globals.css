@@ -33,19 +33,19 @@ html,
 body,
 #root {
   height: 100%;
+  width: 100%;
+
   margin: 0;
   padding: 0;
 }
+
 #root {
   display: flex;
-  /* padding: 2rem; */
 }
 a {
   text-decoration: none;
 }
-/* root {
-  padding: 2rem;
-} */
+
 /*
 Text-level semantics
 ====================

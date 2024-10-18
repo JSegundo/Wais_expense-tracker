@@ -12,21 +12,31 @@
   transition: all $time $type;
 }
 
+@mixin flex-col() {
+  display: flex;
+  flex-direction: column;
+}
+
 // Media queries using defined variables
-@mixin sm {
-  @media (min-width: #{$tablet}) {
+@mixin mq-xs {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}
+@mixin mq-sm {
+  @media (max-width: #{$tablet}) {
     @content;
   }
 }
 
-@mixin md {
-  @media (min-width: #{$desktop}) {
+@mixin mq-md {
+  @media (max-width: #{$desktop}) {
     @content;
   }
 }
 
-@mixin lg {
-  @media (min-width: #{$widescreen}) {
+@mixin mq-lg {
+  @media (max-width: #{$widescreen}) {
     @content;
   }
 }

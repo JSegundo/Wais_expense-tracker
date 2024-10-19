@@ -5,7 +5,7 @@
   align-items: center;
   padding: $space-xxl;
 
-  @include mq-xs {
+  @include max-xs {
     padding: $space-xxl 0 0 0;
   }
 
@@ -22,14 +22,14 @@
       align-self: flex-start;
     }
 
-    @include mq-xs {
+    @include max-xs {
       padding: 0.6rem;
     }
 
     article {
       display: flex;
       gap: $space-lg;
-      @include mq-xs {
+      @include max-xs {
         @include flex-col;
         gap: $space-xs;
       }

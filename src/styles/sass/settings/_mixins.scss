@@ -12,31 +12,50 @@
   transition: all $time $type;
 }
 
-@mixin flex-col() {
+@mixin flex-col($align: null) {
   display: flex;
   flex-direction: column;
+
+  @if $align != null {
+    align-items: $align;
+  }
 }
 
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Reusable Column Class
+
 // Media queries using defined variables
-@mixin mq-xs {
+
+// max-width
+@mixin max-xs {
   @media (max-width: #{$phone}) {
     @content;
   }
 }
-@mixin mq-sm {
-  @media (max-width: #{$tablet}) {
+
+// min-width
+@mixin min-xs {
+  @media (min-width: #{$phone}) {
     @content;
   }
 }
 
-@mixin mq-md {
-  @media (max-width: #{$desktop}) {
+@mixin min-tablet {
+  @media (min-width: #{$tablet}) {
     @content;
   }
 }
-
-@mixin mq-lg {
-  @media (max-width: #{$widescreen}) {
+@mixin min-md {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+@mixin min-lg {
+  @media (min-width: #{$widescreen}) {
     @content;
   }
 }

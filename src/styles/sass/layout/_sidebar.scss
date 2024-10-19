@@ -4,25 +4,59 @@
 }
 
 .sidebar {
-  @include flex-col;
-  border-right: thin solid #726e6e33;
+  width: 100%;
   height: 100%;
-  width: $sidebar-width;
-  min-width: $sidebar-width;
-  text-align: left;
-  // transition: width, left, right, 0.3s;
-  // position: relative;
-  z-index: 1009;
+  @include flex-col;
   padding: 2rem 1rem 1rem;
+  text-align: left;
+  z-index: 1009;
+  background-color: WHITE;
+  // border-right: thin solid #726e6e33;
+
+  position: absolute; // Overlay the content on mobile
+  top: 0;
+  left: 0;
+
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); // Initially hidden
+
+  @include min-tablet {
+    width: $sidebar-width;
+    position: static; // Reset position
+    transform: translateX(0); // Always visible
+  }
+
+  &.active {
+    transform: translateX(0); // Move in when active
+  }
 
   .nav {
     @include flex-col;
     flex-grow: 1;
     justify-content: space-between;
   }
+
+  .sidebar-header {
+    @include flex-between;
+    align-items: center;
+
+    button {
+      @include min-tablet {
+        display: none;
+      }
+    }
+  }
 }
 
 .detail {
-  padding: 2rem 1rem 1rem;
+  padding: $space-md;
   width: 100%;
+  overflow-y: scroll;
+
+  @include flex-col;
+  gap: $space-lg;
+
+  @include min-tablet {
+    padding: 2rem 1rem 1rem;
+  }
 }

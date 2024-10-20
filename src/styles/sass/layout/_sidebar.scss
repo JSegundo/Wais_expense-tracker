@@ -1,7 +1,4 @@
-@mixin break-point {
-  position: fixed;
-  left: -$sidebar-width;
-}
+@import "../settings";
 
 .sidebar {
   width: 100%;

@@ -1,4 +1,3 @@
-import React from "react"
 import { IExpense } from "../interfaces/IExpenses"
 import { Link } from "react-router-dom"
 import ExpensesList from "./ui/ExpensesList"

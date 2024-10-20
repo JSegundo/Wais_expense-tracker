@@ -1,1 +1,13 @@
-{"version":3,"sourceRoot":"","sources":["../../sass/components/_expensesHistory.scss","../../sass/settings/_variables.scss","../../sass/settings/_mixins.scss","../../sass/components/_sidebar.scss"],"names":[],"mappings":"AAEA;EACE,WCOO;;ADLP;EEmBA;EACA;;AFhBA;EEeA;EACA;EFdE;EACA,SCQW;EDPX,eCOW;EDNX;EACA;;AAEA;EACE,kBChBQ;EDiBR;;AAGF;EACE;EACA;;AAEA;EACE,cCFG;;ADMP;EACE;EACA;EACA,KCdS;;ADgBT;EErBJ;EACA;EAGE,aFkBsB;;AAClB;EEvBN;EACA;EAGE,aFoBwB;;AAItB;EACE;EACA;EACA,cCrBG;EDsBH;;AAIF;EACE,OC/CE;;ADoDR;EACE;EACA;EACA;;AAEA;EACE;;AAEF;EACE;;;AAKN;EACE,WC9DO;;;AEPT;EACE;EACA;EDUA;EACA;ECTA;EACA;EACA;EACA;EAEA;EACA;EACA;EAEA;EACA;;AD8BA;EC5CF;IAiBI,OFWY;IEVZ;IACA;;;AAGF;EACE;;AAGF;EDdA;EACA;ECeE;EACA;;AAEA;EACE,OFlCY;EEmCZ;;AAIJ;EDhBA;EACA;ECiBE;;ADKF;ECHE;IAEI","file":"index.css"}
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "../../sass/components/_expensesHistory.scss",
+    "../../sass/settings/_variables.scss",
+    "../../sass/settings/_mixins.scss",
+    "../../sass/components/_sidebar.scss"
+  ],
+  "names": [],
+  "mappings": "AAEA;EACE,WCOO;;ADLP;EEmBA;EACA;;AFhBA;EEeA;EACA;EFdE;EACA,SCQW;EDPX,eCOW;EDNX;EACA;;AAEA;EACE,kBChBQ;EDiBR;;AAGF;EACE;EACA;;AAEA;EACE,cCFG;;ADMP;EACE;EACA;EACA,KCdS;;ADgBT;EErBJ;EACA;EAGE,aFkBsB;;AAClB;EEvBN;EACA;EAGE,aFoBwB;;AAItB;EACE;EACA;EACA,cCrBG;EDsBH;;AAIF;EACE,OC/CE;;ADoDR;EACE;EACA;EACA;;AAEA;EACE;;AAEF;EACE;;;AAKN;EACE,WC9DO;;;AEPT;EACE;EACA;EDUA;EACA;ECTA;EACA;EACA;EACA;EAEA;EACA;EACA;EAEA;EACA;;AD8BA;EC5CF;IAiBI,OFWY;IEVZ;IACA;;;AAGF;EACE;;AAGF;EDdA;EACA;ECeE;EACA;;AAEA;EACE,OFlCY;EEmCZ;;AAIJ;EDhBA;EACA;ECiBE;;ADKF;ECHE;IAEI",
+  "file": "index.css"
+}

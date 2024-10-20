@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useAuth } from "../context/useAuth"
 import "../styles/css/style.css"
-import { Outlet, Link, useLocation } from "react-router-dom"
+import { Outlet, NavLink, useLocation } from "react-router-dom"
 import { IoMenu } from "react-icons/io5"
 import { IoIosCloseCircleOutline } from "react-icons/io"
 import { AnimatePresence, motion } from "framer-motion"
@@ -22,6 +22,7 @@ export default function RootLayout() {
           <IoMenu size={30} />
         </button>
       </header>
+
       <div className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
         <div className="sidebar-header">
           <h1 className="title">Wais</h1>
@@ -29,11 +30,13 @@ export default function RootLayout() {
             <IoIosCloseCircleOutline size={30} />
           </button>
         </div>
-
         <nav className="nav">
           <ul>
             <li>
-              <Link to={`/`}>Home</Link>
+              <NavLink to={`/`}>Home</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/all`}>All transactions</NavLink>
             </li>
           </ul>
           {user?.username && (
@@ -46,6 +49,7 @@ export default function RootLayout() {
           )}
         </nav>
       </div>
+
       <AnimatePresence>
         <div className="detail">
           <motion.div

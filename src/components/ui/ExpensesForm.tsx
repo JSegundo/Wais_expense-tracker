@@ -1,14 +1,15 @@
 import React from "react"
-import { categories, Category, IExpense } from "../interfaces/IExpenses"
+import { categories, Category, IExpense } from "../../interfaces/IExpenses"
 
 interface ExpenseFormProps {
   initialExpense?: IExpense | null // Optional prop for editing
-  onSubmit: (expense: IExpense) => void
+  onSubmit: (expense: IExpense) => void // either for add new expense, or edit existing one
 }
 const ExpensesForm: React.FC<ExpenseFormProps> = ({
   initialExpense,
   onSubmit,
 }) => {
+  // states are initialized empty when registering new expense, or with expense values when editing.
   const [amount, setAmount] = React.useState<number>(
     initialExpense?.amount || 0
   )
@@ -49,6 +50,7 @@ const ExpensesForm: React.FC<ExpenseFormProps> = ({
         How much?
         <input
           type="number"
+          step=".01"
           name="amount"
           value={amount}
           min={1}

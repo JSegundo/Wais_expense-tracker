@@ -5,6 +5,8 @@ import { IExpense } from "../../interfaces/IExpenses"
 import React from "react"
 import ModalEditExpense from "./Modal"
 import { useLocalStorage } from "usehooks-ts"
+import { motion } from "framer-motion"
+import { itemVariants } from "../../utils/motionVariants"
 
 export interface IExpenseListProps {
   expenses: IExpense[]
@@ -20,37 +22,45 @@ export default function ExpensesList({
     "expenses",
     []
   )
-  const [modalIsOpen, setIsOpen] = React.useState(false)
+
+  // Editing funtionality
+  const [modalIsOpen, setModalOpen] = React.useState(false)
   const [expenseToEdit, setExpenseToEdit] = React.useState<IExpense | null>(
     null
   )
-
-  // Conditionally slice the expenses array based on the limit prop
-  // Used to just show the last 5 in the home
-  const displayedExpenses = limit > 0 ? expenses.slice(0, limit) : expenses
-  if (displayedExpenses.length < 1) {
-    return <h1 className="muted">No entries avaliable</h1>
-  }
-
-  const handleEditExpense = (expense: IExpense) => {
-    setExpenseToEdit(expense)
-    setIsOpen(true)
-  }
-
   //function that the expensesForm in the Modal will execute to update expense
   const updateExpense = (updatedExpense: IExpense) => {
     const newExpenses = expenses.map((storedExpense) =>
       storedExpense.id === updatedExpense.id ? updatedExpense : storedExpense
     )
     setLocalStorageExpenses(newExpenses)
-    setIsOpen(false)
+    setModalOpen(false)
+  }
+
+  const handleEditExpense = (expense: IExpense) => {
+    setExpenseToEdit(expense)
+    setModalOpen(true)
+  }
+
+  // Conditionally slice the expenses array based on the limit prop
+  // Used to just show the last 5 in the home
+  const displayedExpenses = limit > 0 ? expenses.slice(0, limit) : expenses
+  if (displayedExpenses.length < 1) {
+    return <motion.h1 className="muted">No entries avaliable</motion.h1>
   }
 
   return (
     <>
       <ul className="expenses-list">
         {displayedExpenses.map((exp) => (
-          <li className="item" key={exp.id}>
+          <motion.li
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="item"
+            key={exp.id}
+          >
             <section>
               {exp.type === "in" ? (
                 <FaCircleArrowUp size={40} />
@@ -81,12 +91,12 @@ export default function ExpensesList({
                 </div>
               )}
             </section>
-          </li>
+          </motion.li>
         ))}
       </ul>
       <ModalEditExpense
         modalIsOpen={modalIsOpen}
-        setIsOpen={setIsOpen}
+        setIsOpen={setModalOpen}
         onSubmit={updateExpense}
         initialExpense={expenseToEdit}
       />

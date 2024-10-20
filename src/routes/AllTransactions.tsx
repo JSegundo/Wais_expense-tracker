@@ -42,7 +42,7 @@ const AllTransactions = () => {
   return (
     <section className="expenses-section">
       <h1>All Transactions</h1>
-      {/* Filter Buttons */}
+      {/* Filter options */}
       <div className="filters">
         <select name="type" onChange={handleFilterChange}>
           <option value="">All Types</option>

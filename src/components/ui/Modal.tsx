@@ -1,6 +1,6 @@
 import React from "react"
 import Modal from "react-modal"
-import ExpensesForm from "../RegisterExpenses"
+import ExpensesForm from "./ExpensesForm"
 import { IExpense } from "../../interfaces/IExpenses"
 
 const customStyles = {

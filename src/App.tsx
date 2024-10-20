@@ -1,7 +1,7 @@
 import "./styles/css/style.css"
 import Home from "./routes/Home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Root from "./routes/Root"
+import RootLayout from "./routes/RootLayout"
 import ErrorPage from "./routes/ErrorPage"
 import AllTransactions from "./routes/AllTransactions"
 import { ProtectedRoute } from "./components/ProtectedRoute"
@@ -10,7 +10,7 @@ import Login from "./routes/Login"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       {

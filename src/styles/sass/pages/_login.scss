@@ -4,6 +4,14 @@
   justify-content: start;
   align-items: center;
   padding: $space-xxl;
+  overflow-y: scroll;
+
+  background: linear-gradient(
+    135deg,
+    $muted-white 0%,
+    adjust-color($brand-primary, $lightness: 35%) 50%,
+    $brand-secondary 100%
+  );
 
   @include max-xs {
     padding: $space-xxl 0 0 0;

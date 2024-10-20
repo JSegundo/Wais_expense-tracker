@@ -9,9 +9,7 @@
   @include flex-col;
   padding: 2rem 1rem 1rem;
   text-align: left;
-  z-index: 1009;
   background-color: WHITE;
-  // border-right: thin solid #726e6e33;
 
   position: absolute; // Overlay the content on mobile
   top: 0;
@@ -54,9 +52,11 @@
   overflow-y: scroll;
 
   @include flex-col;
-  gap: $space-lg;
+  gap: $space-md;
 
   @include min-tablet {
+    gap: $space-xxl;
+
     padding: 2rem 1rem 1rem;
   }
 }

@@ -1,0 +1,15 @@
+.filters {
+  @include flex-col;
+
+  gap: $space-sm;
+  margin-block: $space-lg;
+
+  @include min-tablet {
+    flex-direction: row;
+  }
+}
+
+.modal-header {
+  @include flex-between;
+  align-items: center;
+}

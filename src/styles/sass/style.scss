@@ -1,39 +1,14 @@
 @import "./settings";
-@import "./layout";
 @import "./components";
 @import "./pages";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 body {
   font-family: $font-stack;
   font-size: $base-font-size;
   line-height: 1.6;
   color: $muted-text;
   background-color: white;
-}
-
-.layout-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  @include min-tablet {
-    flex-direction: row;
-    justify-content: center;
-    max-width: 90%;
-  }
-
-  @include min-lg {
-    max-width: 75%;
-  }
-
-  header {
-    display: flex;
-    justify-content: end;
-    padding: $space-xs;
-    @include min-tablet {
-      display: none;
-    }
-  }
 }
 
 h1 {

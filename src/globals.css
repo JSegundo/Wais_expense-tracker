@@ -247,3 +247,8 @@ summary {
   border-radius: 10px;
   background: #6d6d6d17;
 }
+
+/* Modal Overlay */
+.ReactModal__Overlay {
+  z-index: 200;
+}

@@ -3,7 +3,7 @@ import Home from "./routes/Home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./routes/Root"
 import ErrorPage from "./routes/ErrorPage"
-import Settings from "./routes/Settings"
+import AllTransactions from "./routes/AllTransactions"
 import { ProtectedRoute } from "./components/ProtectedRoute"
 import Login from "./routes/Login"
 
@@ -22,10 +22,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "settings",
+        path: "all",
         element: (
           <ProtectedRoute>
-            <Settings />
+            <AllTransactions />
           </ProtectedRoute>
         ),
       },

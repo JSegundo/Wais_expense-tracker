@@ -1,30 +1,37 @@
 import React from "react"
-import { Category, Expense } from "../interfaces/IExpenses"
+import { categories, Category, IExpense } from "../interfaces/IExpenses"
 
-const categories: Category[] = [
-  "Food",
-  "Transportation",
-  "Entertainment",
-  "Utilities",
-  "Others",
-]
 interface ExpenseFormProps {
-  addExpense: (expense: Expense) => void
+  initialExpense?: IExpense | null // Optional prop for editing
+  onSubmit: (expense: IExpense) => void
 }
+const ExpensesForm: React.FC<ExpenseFormProps> = ({
+  initialExpense,
+  onSubmit,
+}) => {
+  const [amount, setAmount] = React.useState<number>(
+    initialExpense?.amount || 0
+  )
+  const [category, setCategory] = React.useState<Category>(
+    initialExpense?.category || "Others"
+  )
+  const [type, setType] = React.useState<"in" | "out">(
+    initialExpense?.type || "in"
+  )
+  const [date, setDate] = React.useState(initialExpense?.date || "")
 
-const RegisterExpensesForm: React.FC<ExpenseFormProps> = ({ addExpense }) => {
-  const [amount, setAmount] = React.useState<number>(0)
-  const [description, setDescription] = React.useState<string>("")
-  const [category, setCategory] = React.useState<Category>("Others")
-  const [type, setType] = React.useState<"in" | "out">("in")
-
-  const handleAddExpense = () => {
-    const expense = { amount, category, description, id: Date.now(), type }
-    addExpense(expense)
+  const handleSubmit = () => {
+    const expense = {
+      amount,
+      category,
+      id: initialExpense ? initialExpense.id : Date.now(),
+      type,
+      date: date ? new Date(date).toISOString().split("T")[0] : "", // Format date as YYYY-MM-DD
+    }
+    onSubmit(expense)
     // Reset fields
     setAmount(0)
     setCategory("Others")
-    setDescription("")
     setType("in")
   }
 
@@ -33,56 +40,68 @@ const RegisterExpensesForm: React.FC<ExpenseFormProps> = ({ addExpense }) => {
       className="box"
       onSubmit={(e) => {
         e.preventDefault()
-        handleAddExpense()
+        handleSubmit()
       }}
     >
-      <h4>Add transaction</h4>
+      <h4>{initialExpense ? "Edit Transaction" : "Add Transaction"}</h4>
 
-      <label htmlFor="amount">How much?</label>
-      <input
-        type="number"
-        name="amount"
-        value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
-        placeholder="Amount"
-        required
-      />
+      <label htmlFor="amount">
+        How much?
+        <input
+          type="number"
+          name="amount"
+          value={amount}
+          min={1}
+          onChange={(e) => setAmount(Number(e.target.value))}
+          placeholder="Amount"
+          required
+        />
+      </label>
+      <label htmlFor="type">
+        Pick a type
+        <select
+          name="type"
+          value={type}
+          onChange={(e) => setType(e.target.value as "in" | "out")}
+          required
+        >
+          <option value="in">Income</option>
+          <option value="out">Expense</option>
+        </select>
+      </label>
+      <label htmlFor="category">
+        Pick a category
+        <select
+          name="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value as Category)}
+          required
+        >
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </label>
+      {/* Add a date input */}
+      <label htmlFor="date">
+        When?
+        <input
+          name="date"
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          placeholder="Date"
+          required
+        />
+      </label>
 
-      <label htmlFor="category">Pick a category</label>
-      <select
-        name="category"
-        value={category}
-        onChange={(e) => setCategory(e.target.value as Category)}
-      >
-        {categories.map((cat) => (
-          <option key={cat} value={cat}>
-            {cat}
-          </option>
-        ))}
-      </select>
-
-      <label htmlFor="description">Add a description</label>
-      <input
-        name="description"
-        type="text"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder="Description"
-        required
-      />
-
-      <label htmlFor="type">Pick a type</label>
-      <select
-        name="type"
-        value={type}
-        onChange={(e) => setType(e.target.value as "in" | "out")}
-      >
-        <option value="in">Income</option>
-        <option value="out">Expense</option>
-      </select>
-      <button type="submit">Add Transaction</button>
+      <button type="submit">
+        {initialExpense ? "Save Changes" : "Add Transaction"}
+      </button>
     </form>
   )
 }
 
-export default RegisterExpensesForm
+export default ExpensesForm

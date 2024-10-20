@@ -2,7 +2,7 @@
 @import "./layout";
 @import "./components";
 @import "./pages";
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 body {
   font-family: $font-stack;
   font-size: $base-font-size;
@@ -14,7 +14,6 @@ body {
 .layout-container {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   width: 100%;
 
   @include min-tablet {
@@ -37,6 +36,15 @@ body {
   }
 }
 
+h1 {
+  &.title {
+    font-weight: 900;
+  }
+  &.muted {
+    color: $muted-text;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -54,11 +62,6 @@ h5 {
 
 span {
   font-size: 0.7rem;
-}
-
-.muted-title {
-  color: $muted-text;
-  margin-bottom: $space-xs;
 }
 
 p {
@@ -105,24 +108,33 @@ button {
     background-color: transparent;
     border: 2px solid transparent;
     text-decoration: none;
-    // padding-left: 0;
 
     &:hover {
       text-decoration: underline;
       box-shadow: none;
     }
   }
+  &.filter-active {
+    background-color: $brand-primary;
+  }
+
+  &.destructive {
+    background-color: $destructive;
+    color: $muted-white;
+    &:hover {
+      background-color: adjust-color($destructive, $lightness: -10%);
+    }
+  }
 }
 
 // Box/Card Styling
 .box {
-  background-color: $muted-white;
+  max-width: $tablet;
   padding: $space-md;
+  margin-bottom: $space-lg;
+  background-color: $muted-white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: $space-lg;
-
-  max-width: $tablet;
 }
 
 // Other Elements
@@ -133,6 +145,7 @@ label {
 input,
 textarea,
 select {
+  font-size: x-small;
   padding: $space-sm;
   border: thin solid $brand-primary;
   border-radius: 12px;

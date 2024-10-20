@@ -4,7 +4,8 @@ $muted-white: #f8f8f8; // Light muted white for boxes/cards
 $text: #302e2e; // Muted color for normal text
 $muted-text: #666; // Muted color for normal text
 $success: #2f5711;
-// $brand-font: "PT Sans";
+$destructive: #b3261e;
+$darkened-secondary: #0d1b03;
 
 $phone: 480px;
 $tablet: 769px;
@@ -12,7 +13,8 @@ $desktop: 960px;
 $widescreen: 1200px;
 
 // Fonts
-$font-stack: "Helvetica Neue", sans-serif;
+$font-stack: "Inter", sans-serif;
+
 $base-font-size: 0.875rem;
 
 // Spacing Scale

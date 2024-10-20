@@ -1,7 +1,9 @@
-import ExpensesForm from "../components/RegisterExpenses"
+import ExpensesForm from "../components/ui/ExpensesForm"
 import ExpensesHistory from "../components/ExpensesHistory"
 import { useLocalStorage } from "usehooks-ts"
 import { IExpense } from "../interfaces/IExpenses"
+import { motion } from "framer-motion"
+import { variantsBalance } from "../utils/motionVariants"
 
 const Home = () => {
   const [expenses, setExpenses] = useLocalStorage<IExpense[]>("expenses", [])
@@ -24,7 +26,14 @@ const Home = () => {
       {/* Calculate balance from mapping expenses */}
       <div>
         <label>Total balance</label>
-        <h1>{calculateBalance()} EUR</h1>
+        <motion.h1
+          key={calculateBalance()} // Unique key to trigger re-animation when balance changes
+          variants={variantsBalance}
+          initial="initial"
+          animate="animate"
+        >
+          {calculateBalance()} EUR
+        </motion.h1>
       </div>
 
       {/* Register expenses */}

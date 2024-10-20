@@ -8,10 +8,12 @@
   padding: $space-xxl;
   overflow-y: scroll;
 
+  background: white;
   background: linear-gradient(
-    135deg,
-    $muted-white 0%,
-    adjust-color($brand-primary, $lightness: 35%) 50%,
+    137deg,
+    white 20%,
+    rgba(223, 247, 208, 1) 50%,
+    $brand-primary 70%,
     $brand-secondary 100%
   );
 

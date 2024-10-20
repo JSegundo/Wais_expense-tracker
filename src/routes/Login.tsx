@@ -33,7 +33,7 @@ const Login: React.FC = () => {
   return (
     <div className="container">
       {/* // form should be component */}
-      <h1>Welcome back</h1>
+      <h1 className="title">Welcome back</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Your user name</label>
         <input type="text" name="username" placeholder="Leonel" required />
@@ -41,7 +41,7 @@ const Login: React.FC = () => {
         <label htmlFor="password">Your password</label>
         <input type="password" name="password" placeholder="Messi" required />
         <button type="submit" disabled={loading}>
-          Log In
+          Log in
         </button>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <section>

@@ -1,26 +1,36 @@
-import RegisterExpensesForm from "../components/RegisterExpenses"
+import ExpensesForm from "../components/RegisterExpenses"
 import ExpensesHistory from "../components/ExpensesHistory"
 import { useLocalStorage } from "usehooks-ts"
-import { Expense } from "../interfaces/IExpenses"
+import { IExpense } from "../interfaces/IExpenses"
 
 const Home = () => {
-  const [expenses, setExpenses] = useLocalStorage<Expense[]>("expenses", [])
+  const [expenses, setExpenses] = useLocalStorage<IExpense[]>("expenses", [])
 
-  const addExpense = (expense: Expense) => {
-    const updatedExpenses = [...expenses, expense]
+  const addExpense = (expense: IExpense) => {
+    const updatedExpenses = [expense, ...expenses]
     setExpenses(updatedExpenses)
+  }
+
+  const calculateBalance = () => {
+    return expenses.reduce((total, expense) => {
+      return expense.type === "in"
+        ? total + expense.amount
+        : total - expense.amount
+    }, 0)
   }
 
   return (
     <>
-      {/* calculate balance from mapping expenses */}
-      <h6>Total balance</h6>
-      <h1>612,45 EUR</h1>
+      {/* Calculate balance from mapping expenses */}
+      <div>
+        <label>Total balance</label>
+        <h1>{calculateBalance()} EUR</h1>
+      </div>
 
       {/* Register expenses */}
-      <RegisterExpensesForm addExpense={addExpense} />
+      <ExpensesForm onSubmit={addExpense} />
 
-      {/* transactions history */}
+      {/* Transactions history */}
       <ExpensesHistory expenses={expenses} />
     </>
   )

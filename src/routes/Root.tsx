@@ -22,7 +22,7 @@ export default function Sidebar() {
 
       <div className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
         <div className="sidebar-header">
-          <h1>Wais</h1>
+          <h1 className="title">Wais</h1>
           <button className="link" onClick={toggleSidebar}>
             <IoIosCloseCircleOutline size={30} />
           </button>
@@ -33,14 +33,13 @@ export default function Sidebar() {
             <li>
               <Link to={`/`}>Home</Link>
             </li>
-            <li>
-              <Link to={`/settings`}>Settings</Link>
-            </li>
           </ul>
           {user?.username && (
             <div>
               <h4>{user.username}</h4>
-              <button onClick={logout}>Log Out</button>
+              <button onClick={logout} className="destructive">
+                Log Out
+              </button>
             </div>
           )}
         </nav>

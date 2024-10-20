@@ -1,23 +1,17 @@
-import { IExpense } from "../interfaces/IExpenses"
 import { Link } from "react-router-dom"
 import ExpensesList from "./ui/ExpensesList"
 
-export interface ExpenseHistoryProps {
-  expenses: IExpense[]
-}
-const ExpensesHistory = ({ expenses }: ExpenseHistoryProps) => {
+const ExpensesHistory = () => {
   return (
     <section className="expenses-section">
       <article>
         <h1>Transactions</h1>
         <button className="link">
-          <Link to={"all"} state={expenses}>
-            See all
-          </Link>
+          <Link to={"all"}>See all</Link>
         </button>
       </article>
 
-      <ExpensesList expenses={expenses} limit={4} />
+      <ExpensesList limit={4} />
     </section>
   )
 }

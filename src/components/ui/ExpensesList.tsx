@@ -9,16 +9,14 @@ import { motion } from "framer-motion"
 import { itemVariants } from "../../utils/motionVariants"
 
 export interface IExpenseListProps {
-  expenses: IExpense[]
   showEdit?: boolean
   limit?: number
 }
 export default function ExpensesList({
-  expenses,
   showEdit = false,
   limit = 0,
 }: IExpenseListProps) {
-  const [, setLocalStorageExpenses] = useLocalStorage<IExpense[]>(
+  const [expenses, setLocalStorageExpenses] = useLocalStorage<IExpense[]>(
     "expenses",
     []
   )

@@ -40,7 +40,7 @@ const Home = () => {
       <ExpensesForm onSubmit={addExpense} />
 
       {/* Transactions history */}
-      <ExpensesHistory expenses={expenses} />
+      <ExpensesHistory />
     </>
   )
 }

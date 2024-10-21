@@ -25,13 +25,7 @@
   padding: 40px;
   overflow-y: scroll;
   background: white;
-  background: linear-gradient(
-    137deg,
-    white 20%,
-    rgb(223, 247, 208) 50%,
-    #9fe870 70%,
-    #163300 100%
-  );
+  background: linear-gradient(137deg, white 20%, rgb(223, 247, 208) 50%, #9fe870 70%, #163300 100%);
 }
 @media (max-width: 480px) {
   .container {

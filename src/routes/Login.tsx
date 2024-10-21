@@ -45,10 +45,15 @@ const Login: React.FC = () => {
         <h1 className="title">Welcome back</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Your user name</label>
-          <input type="text" name="username" placeholder="Leonel" required />
+          <input type="text" name="username" placeholder="Jhon" required />
 
           <label htmlFor="password">Your password</label>
-          <input type="password" name="password" placeholder="Messi" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            required
+          />
           <button type="submit" disabled={loading}>
             Log in
           </button>

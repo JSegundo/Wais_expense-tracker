@@ -1,0 +1,74 @@
+@import "../../styles/sass/settings/";
+
+.expenses-section {
+  max-width: $tablet;
+
+  article {
+    @include flex-between;
+  }
+
+  li.item {
+    @include flex-between;
+    align-items: center;
+    padding: $space-sm;
+    margin-bottom: $space-sm;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $muted-white;
+      cursor: pointer;
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+
+      article {
+        padding-left: $space-md;
+      }
+    }
+
+    .action-section {
+      display: flex;
+      align-items: center;
+      gap: $space-sm;
+
+      article {
+        @include flex-col(flex-end);
+        &.start {
+          @include flex-col(flex-start);
+        }
+      }
+
+      .icon-container {
+        display: flex;
+        align-items: center;
+        padding-left: $space-md;
+        height: 100%;
+      }
+    }
+    .amount {
+      &.in {
+        color: $success;
+      }
+    }
+  }
+
+  .col {
+    display: grid;
+    grid-template-rows: repeat(2, auto); // Ensure both spans align
+    align-items: start;
+
+    &:last-child {
+      text-align: right;
+    }
+    &.start {
+      text-align: left;
+    }
+  }
+}
+
+.expenses-list {
+  max-width: $tablet;
+}

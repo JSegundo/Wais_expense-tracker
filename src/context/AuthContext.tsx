@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   ): Promise<{ success?: boolean; error?: { message: string } }> => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        if (username === "test" && password === "password") {
+        if (username === "Jhon" && password === "password") {
           setUser({ username })
           setIsAuthenticated(true)
           resolve({ success: true })

@@ -1,14 +1,1 @@
-{
-  "version": 3,
-  "sourceRoot": "",
-  "sources": [
-    "../../sass/pages/_allTransactions.scss",
-    "../../sass/settings/_mixins.scss",
-    "../../sass/settings/_variables.scss",
-    "../../sass/pages/_login.scss",
-    "../../sass/pages/_rootLayout.scss"
-  ],
-  "names": [],
-  "mappings": "AAEA;ECaE;EACA;EDXA,KEea;EFdb,cEoBS;;ADqBT;ED7CF;IAOI;;;;AAIJ;ECWE;EACA;EDVA;;;AGbF;EACE;EFYA;EACA;EEXA;EACA;EACA,SDqBU;ECpBV;EAEA;EACA;;AFuBA;EEhCF;IAkBI;;;AAGF;EACE;;AAGF;EACE,WDnBI;ECoBJ,aDHO;;ACKP;EACE,YDNK;ECOL;;AFCJ;EEPA;IAUI;;;AAGF;EACE;EACA,KDhBK;;ADQT;EEME;IFzBF;IACA;IE6BM,KDtBG;;;;AErBX;EACE;EACA;EACA;;AH0CA;EG7CF;IAMI;IACA;IACA;;;AH+CF;EGvDF;IAYI;;;AAGF;EACE;EACA;EACA,SFGO;;ADwBT;EG9BA;IAKI;;;;AAMN;EACE,SFJS;EEKT;EACA;EHhBA;EACA;EGkBA,KFTS;;ADsBT;EGnBF;IASI,KFTQ;IEWR",
-  "file": "index.css"
-}
+{"version":3,"sourceRoot":"","sources":["../../sass/pages/_allTransactions.scss","../../sass/settings/_mixins.scss","../../sass/settings/_variables.scss","../../sass/pages/_login.scss","../../sass/pages/_rootLayout.scss"],"names":[],"mappings":"AAEA;ECaE;EACA;EDXA,KEea;EFdb,cEoBS;;ADqBT;ED7CF;IAOI;;;;AAIJ;ECWE;EACA;EDVA;;;AGbF;EACE;EFYA;EACA;EEXA;EACA;EACA,SDqBU;ECpBV;EAEA;EACA;;AFuBA;EEhCF;IAkBI;;;AAGF;EACE;;AAGF;EACE,WDnBI;ECoBJ,aDHO;;ACKP;EACE,YDNK;ECOL;;AFCJ;EEPA;IAUI;;;AAGF;EACE;EACA,KDhBK;;ADQT;EEME;IFzBF;IACA;IE6BM,KDtBG;;;;AErBX;EACE;EACA;EACA;;AH0CA;EG7CF;IAMI;IACA;IACA;;;AH+CF;EGvDF;IAYI;;;AAGF;EACE;EACA;EACA,SFGO;;ADwBT;EG9BA;IAKI;;;;AAMN;EACE,SFJS;EEKT;EACA;EHhBA;EACA;EGkBA,KFTS;;ADsBT;EGnBF;IASI,KFTQ;IEWR","file":"index.css"}

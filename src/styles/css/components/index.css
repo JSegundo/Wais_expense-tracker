@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .expenses-section {
   max-width: 769px;
 }
@@ -90,7 +89,7 @@
 }
 .sidebar.active {
   transform: translateX(0);
-
+}
 .sidebar .nav {
   display: flex;
   flex-direction: column;

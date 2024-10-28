@@ -1,6 +1,6 @@
-@import "../settings";
+@import "../../styles/settings";
 
-.container {
+.loginContainer {
   width: 100%;
   @include flex-col;
   justify-content: start;
@@ -25,11 +25,11 @@
     text-align: center;
   }
 
-  form {
+  .loginForm {
     max-width: $phone;
     padding-top: $space-lg;
 
-    section {
+    .formSection {
       margin-top: $space-lg;
       align-self: flex-start;
     }
@@ -38,7 +38,7 @@
       padding: 0.6rem;
     }
 
-    article {
+    .socialButtonsContainer {
       display: flex;
       gap: $space-lg;
       @include max-xs {

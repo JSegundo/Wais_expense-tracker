@@ -1,8 +1,9 @@
 import React from "react"
 import Modal from "react-modal"
-import ExpensesForm from "./ExpensesForm"
-import { IExpense } from "../../interfaces/IExpenses"
+import ExpensesForm from "../ExpensesForm"
+import { IExpense } from "../../../interfaces/IExpenses"
 import { IoIosCloseCircleOutline } from "react-icons/io"
+import styles from "./modal.module.scss"
 
 const customStyles = {
   content: {
@@ -39,7 +40,7 @@ const ModalEditExpense = ({
       style={customStyles}
       contentLabel="Example Modal"
     >
-      <header className="modal-header">
+      <header className={styles["modal-header"]}>
         <h2>Edit expense</h2>
         <button className="link" onClick={closeModal}>
           <IoIosCloseCircleOutline size={30} />

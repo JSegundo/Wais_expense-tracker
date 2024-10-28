@@ -1,6 +1,5 @@
-@import "../settings";
+@import "../../styles/settings";
 
-// Main component in RootLayout
 .sidebar {
   width: 100%;
   height: 100%;
@@ -27,24 +26,26 @@
     transform: translateX(0);
   }
 
+  .sidebarHeader {
+    @include flex-between;
+    align-items: center;
+
+    .closeIcoṇ {
+      @include min-tablet {
+        display: none;
+      }
+    }
+  }
+
   .nav {
     @include flex-col;
     flex-grow: 1;
     justify-content: space-between;
 
-    a.active {
-      color: $brand-secondary;
-      font-weight: 600;
-    }
-  }
-
-  .sidebar-header {
-    @include flex-between;
-    align-items: center;
-
-    button {
-      @include min-tablet {
-        display: none;
+    a {
+      &.active {
+        color: $brand-secondary;
+        font-weight: 600;
       }
     }
   }

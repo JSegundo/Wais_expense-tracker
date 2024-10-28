@@ -1,0 +1,9 @@
+@import "../../styles/settings/";
+
+.expenses-section {
+  max-width: $tablet;
+
+  article {
+    @include flex-between;
+  }
+}

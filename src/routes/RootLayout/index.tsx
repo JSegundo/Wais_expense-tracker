@@ -1,13 +1,13 @@
 import { useState } from "react"
-import { useAuth } from "../context/useAuth"
-import "../styles/css/style.css"
-import { Outlet, NavLink, useLocation } from "react-router-dom"
+import "../../styles/style.scss"
+import { Outlet, useLocation } from "react-router-dom"
 import { IoMenu } from "react-icons/io5"
-import { IoIosCloseCircleOutline } from "react-icons/io"
 import { AnimatePresence, motion } from "framer-motion"
+import styles from "./Layout.module.scss"
+import Sidebar from "../../components/Sidebar"
 
 export default function RootLayout() {
-  const { user, logout } = useAuth()
+  // const { user, logout } = useAuth()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const location = useLocation()
@@ -16,14 +16,15 @@ export default function RootLayout() {
     setIsSidebarOpen(!isSidebarOpen)
   }
   return (
-    <div className="layout-container">
-      <header>
+    <div className={styles.layoutContainer}>
+      <header className={styles.header}>
         <button onClick={toggleSidebar} className="link">
           <IoMenu size={30} />
         </button>
       </header>
+      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      <div className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
+      {/* <div className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
         <div className="sidebar-header">
           <h1 className="title">Wais</h1>
           <button className="link" onClick={toggleSidebar}>
@@ -48,10 +49,10 @@ export default function RootLayout() {
             </div>
           )}
         </nav>
-      </div>
+      </div> */}
 
       <AnimatePresence>
-        <div className="detail">
+        <div className={styles.detail}>
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0 }}

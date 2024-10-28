@@ -1,12 +1,13 @@
 import { FaArrowCircleDown } from "react-icons/fa"
 import { FaCircleArrowUp } from "react-icons/fa6"
 import { MdOutlineEdit } from "react-icons/md"
-import { IExpense } from "../../interfaces/IExpenses"
+import { IExpense } from "../../../interfaces/IExpenses"
 import React from "react"
-import ModalEditExpense from "./Modal"
+import ModalEditExpense from "../Modal"
 import { useLocalStorage } from "usehooks-ts"
 import { motion } from "framer-motion"
-import { itemVariants } from "../../utils/motionVariants"
+import { itemVariants } from "../../../utils/motionVariants"
+import styles from "./ExpensesList.module.scss"
 
 export interface IExpenseListProps {
   expenses: IExpense[]
@@ -58,33 +59,36 @@ export default function ExpensesList({
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="item"
+            className={styles.item}
             key={exp.id}
           >
-            <section>
+            <section className={styles.itemSection}>
               {exp.type === "in" ? (
                 <FaCircleArrowUp size={40} />
               ) : (
                 <FaArrowCircleDown size={40} />
               )}
-              <article className="col start">
-                <h5 className="category">{exp.category}</h5>
-                <span className="type">{exp.type}</span>
+              <article className={`${styles.col} `}>
+                <h5>{exp.category}</h5>
+                <span>{exp.type}</span>
               </article>
             </section>
 
-            <section className="action-section">
-              <article className="col">
-                <h5 className={`amount ${exp.type}`}>
+            <section className={styles.actionSection}>
+              <article className={styles.col}>
+                <h5
+                  className={`${styles.amount} ${
+                    exp.type === "in" ? styles.amountIn : ""
+                  }`}
+                >
                   {exp.type === "in" ? "+ " : "- "}
                   {exp.amount}
                 </h5>
                 <span>{exp.date}</span>
               </article>
 
-              {/* Conditionally render the edit icon based on showEdit prop */}
               {showEdit && (
-                <div className="icon-container">
+                <div className={styles.iconContainer}>
                   <button onClick={() => handleEditExpense(exp)}>
                     <MdOutlineEdit size={24} />
                   </button>

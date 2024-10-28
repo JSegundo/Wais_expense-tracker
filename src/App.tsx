@@ -1,4 +1,4 @@
-import "./styles/css/style.css"
+import "./styles/style.scss"
 import Home from "./routes/Home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import RootLayout from "./routes/RootLayout"

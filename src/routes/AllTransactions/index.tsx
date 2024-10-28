@@ -1,7 +1,8 @@
 import React from "react"
-import ExpensesList from "../components/ui/ExpensesList"
-import { categories, IExpense } from "../interfaces/IExpenses"
 import { useLocalStorage } from "usehooks-ts"
+import ExpensesList from "../../components/ui/ExpensesList"
+import { categories, IExpense } from "../../interfaces/IExpenses"
+import styles from "./AllTransactions.module.scss"
 
 export interface FilterOptions {
   type?: "in" | "out" | ""
@@ -40,10 +41,10 @@ const AllTransactions = () => {
   })
 
   return (
-    <section className="expenses-section">
+    <section className={styles["expenses-section"]}>
       <h1>All Transactions</h1>
       {/* Filter options */}
-      <div className="filters">
+      <div className={styles.filters}>
         <select name="type" onChange={handleFilterChange}>
           <option value="">All Types</option>
           <option value="in">Income</option>

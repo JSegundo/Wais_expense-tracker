@@ -1,6 +1,6 @@
-@import "../settings";
+@import "../../styles/settings";
 
-.layout-container {
+.layoutContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -14,29 +14,27 @@
   @include min-lg {
     max-width: 75%;
   }
+}
 
-  header {
-    display: flex;
-    justify-content: end;
-    padding: $space-xs;
-    @include min-tablet {
-      display: none;
-    }
+.header {
+  display: flex;
+  justify-content: end;
+  padding: $space-xs;
+
+  @include min-tablet {
+    display: none;
   }
 }
 
-// Parent container of children elements of RootLayout
 .detail {
   padding: $space-md;
   width: 100%;
   overflow-y: scroll;
-
   @include flex-col;
   gap: $space-md;
 
   @include min-tablet {
     gap: $space-xxl;
-
     padding: 2rem 1rem 1rem;
   }
 }

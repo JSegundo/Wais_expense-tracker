@@ -1,0 +1,61 @@
+@import "../../../styles/settings";
+
+.item {
+  @include flex-between;
+  align-items: center;
+  padding: $space-sm;
+  margin-bottom: $space-sm;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $muted-white;
+    cursor: pointer;
+  }
+}
+
+.itemSection {
+  display: flex;
+  align-items: center;
+
+  article {
+    padding-left: $space-md;
+    @include flex-col(flex-start);
+  }
+}
+
+.actionSection {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+
+  article {
+    @include flex-col(flex-end);
+  }
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  padding-left: $space-md;
+  height: 100%;
+}
+
+.amount {
+  &.amountIn {
+    color: $success;
+  }
+}
+
+.col {
+  display: grid;
+  grid-template-rows: repeat(2, auto); // Ensure both spans align
+  align-items: start;
+
+  &:last-child {
+    text-align: right;
+  }
+  &.start {
+    text-align: left;
+  }
+}

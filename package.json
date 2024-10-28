@@ -4,10 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"npm run watch:sass\"",
-    "watch:sass": "sass --watch src/styles/sass:src/styles/css",
-    "build:sass": "sass src/styles/sass:src/styles/css",
-    "build": "npm run build:sass && tsc -b && vite build",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

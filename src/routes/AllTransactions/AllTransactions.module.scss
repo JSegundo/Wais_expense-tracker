@@ -1,4 +1,4 @@
-@import "../settings";
+@import "../../styles/settings/";
 
 .filters {
   @include flex-col;
@@ -9,9 +9,4 @@
   @include min-tablet {
     flex-direction: row;
   }
-}
-
-.modal-header {
-  @include flex-between;
-  align-items: center;
 }

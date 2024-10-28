@@ -1,0 +1,6 @@
+@import "../../../styles/settings";
+
+.modal-header {
+  @include flex-between;
+  align-items: center;
+}
